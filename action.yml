@@ -1,17 +1,24 @@
 name: 'Git Commit Lit!!!!'
 description: 'Random Git Commits that makes your Github Contribution Graph lit!'
 inputs:
-  lower-bound:  # id of input
-    description: 'lower bound of number of commits per day'
+  lower-bound: 
+    description: 'Lower bound of number of commits per day'
     required: true
     default: '0'
-  upper-bound:  # id of input
-    description: 'upper bound of number of commits per day'
+  upper-bound:  
+    description: 'Upper bound of number of commits per day'
     required: true
     default: '7' 
+  user-name: 
+    description: 'Your Github username'
+    required: true
+  user-email: 
+    description: 'Your email used for Github account'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.lower-bound }}
     - ${{ inputs.upper-bound }}
+    - ${{ inputs.user-name }}
+    - ${{ inputs.user-email }}
