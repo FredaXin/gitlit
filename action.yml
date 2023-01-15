@@ -14,6 +14,7 @@ inputs:
     required: true
   user-email: 
     description: 'Your email used for Github account'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
